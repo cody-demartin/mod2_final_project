@@ -1,5 +1,15 @@
-<h1>New Question</h1>
+<%= render 'top/topnav' %>
 
-<%= render 'form', question: @question %>
 
-<%= link_to 'Back', questions_path %>
+<div class="top-question">
+    <h2>Create New Question</h2>
+    <br>
+
+    <%= render 'form', question: @question %>
+
+    <%= link_to 'Back', questions_path %>
+
+</div>
+
+
+
