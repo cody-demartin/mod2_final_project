@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @answer = current_user.answers.build 
   end
 
   # GET /questions/new
