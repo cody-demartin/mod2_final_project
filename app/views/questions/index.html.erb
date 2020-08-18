@@ -7,63 +7,62 @@
 
 <h1>Unanswered Questions</h1>
     <% @unanswered = @questions.no_answers %>
-    <% if current_user.employee  %>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Body</th>
-            <th>User email</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @unanswered.each do |question| %>
+        <% if current_user.employee  %>
+        <table>
+            <thead>
             <tr>
-              <td><%= question.title %></td>
-              <td><%= question.body %></td>
-              <td><%= question.user.email %></td>
-              <td><%= link_to 'Show', question %></td>
-              <td><%= link_to 'Edit', edit_question_path(question) %></td>
-              <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <th>Title</th>
+                <th>Body</th>
+                <th>User email</th>
+                <th colspan="3"></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+            </thead>
 
-      <br>
-
-      <%= link_to 'New Question', new_question_path %>
-
-    <% else %>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Body</th>
-            <th>User email</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @unanswered.each do |question| %>
-            <tr>
-              <% if question.user_id == current_user.id %>
+            <tbody>
+            <% @unanswered.each do |question| %>
+                <tr>
                 <td><%= question.title %></td>
                 <td><%= question.body %></td>
                 <td><%= question.user.email %></td>
                 <td><%= link_to 'Show', question %></td>
                 <td><%= link_to 'Edit', edit_question_path(question) %></td>
                 <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+
+        <br>
+
+        <% else %>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>User email</th>
+                <th colspan="3"></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-    </div>
+            </thead>
+
+            <tbody>
+            <% @unanswered.each do |question| %>
+                <tr>
+                <% if question.user_id == current_user.id %>
+                    <td><%= question.title %></td>
+                    <td><%= question.body %></td>
+                    <td><%= question.user.email %></td>
+                    <td><%= link_to 'Show', question %></td>
+                    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+                    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+        <% end %>
+        </div>
+    <%= button_to 'New Question', new_question_path, method: :get %>
 
 <h1>Answered Questions</h1>
     <% @answered = @questions.has_answers %>
