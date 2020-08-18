@@ -3,7 +3,6 @@
 
 <div class="start">
   <div class="unanswered">
-  
     <h1>Unanswered Questions</h1>
         <% @unanswered = @questions.no_answers %>
             <% if current_user.employee  %>
@@ -62,10 +61,13 @@
             <% end %>
              <%= button_to 'New Question', new_question_path, method: :get %>
       </div>
+      <div id="new_question">
+      <%= button_to 'New Question', new_question_path, method: :get %>
+  
+      </div>
   </div>
 
   <div class="answered">
-  
     <h1>Answered Questions</h1>
         <% @answered = @questions.has_answers %>
         <% if current_user.employee  %>
