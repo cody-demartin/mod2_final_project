@@ -21,6 +21,22 @@
   <%= User.find(@question.user_id).email %>
 </p>
 
+<%= form_for @answer do |f| %>
+
+  <%= f.label :title %> 
+  <%= f.text_field :title %> 
+
+  <%= f.label :body %> 
+  <%= f.text_area :body %> 
+
+  <%= f.hidden_field :question_id, value: @question.id %> 
+
+  <%= f.hidden_field :user_id, value: current_user.id  %>
+
+  <%= f.submit "Submit Answer" %>
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
