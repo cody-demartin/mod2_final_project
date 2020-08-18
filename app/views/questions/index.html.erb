@@ -2,7 +2,6 @@
 
 
 <div class="start">
-  <%= button_to 'New Question', new_question_path, method: :get %>
   <div class="unanswered">
   
     <h1>Unanswered Questions</h1>
@@ -61,6 +60,7 @@
                 </tbody>
             </table>
             <% end %>
+             <%= button_to 'New Question', new_question_path, method: :get %>
       </div>
   </div>
 
