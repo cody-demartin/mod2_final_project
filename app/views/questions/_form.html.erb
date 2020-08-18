@@ -17,6 +17,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, [ 'Finance','Billing','Admission','Job' ], :prompt => 'Select One' %>
+  </div>
+
+
+
+  <div class="field">
     <%= form.label :body %>
     <%= form.rich_text_area :body %>
   </div>
@@ -26,6 +33,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit Question" %>
   </div>
 <% end %>
