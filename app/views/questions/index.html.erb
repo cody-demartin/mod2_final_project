@@ -7,6 +7,8 @@
 
   <h1>Questions</h1>
 
+  
+<% if current_user.employee  %>
   <table>
     <thead>
       <tr>
@@ -35,4 +37,31 @@
 
   <%= link_to 'New Question', new_question_path %>
 
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>User email</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <% if question.user_id == current_user.id %>
+            <td><%= question.title %></td>
+            <td><%= question.body %></td>
+            <td><%= question.user.email %></td>
+            <td><%= link_to 'Show', question %></td>
+            <td><%= link_to 'Edit', edit_question_path(question) %></td>
+            <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 </div>
