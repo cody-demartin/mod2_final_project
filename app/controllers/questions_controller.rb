@@ -14,7 +14,11 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @question = current_user.questions.build
+    if current_user.employee == false 
+      @question = current_user.questions.build
+    else 
+      redirect_to forbidden_path
+    end
   end
 
   # GET /questions/1/edit

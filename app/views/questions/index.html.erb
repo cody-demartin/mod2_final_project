@@ -59,12 +59,9 @@
                 </tbody>
             </table>
             <% end %>
-             <%= button_to 'New Question', new_question_path, method: :get %>
+             <div id="new-question-button-"><%= button_to 'New Question', new_question_path, method: :get %></div>
       </div>
-      <div id="new_question">
-      <%= button_to 'New Question', new_question_path, method: :get %>
-  
-      </div>
+      
   </div>
 
   <div class="answered">
@@ -97,7 +94,7 @@
 
           <br>
 
-          <%= link_to 'New Question', new_question_path %>
+          
 
         <% else %>
           <table>
