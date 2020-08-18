@@ -15,28 +15,40 @@
   <%= @question.body %>
 </p>
 
-
 <p>
   <strong>User:</strong>
   <%= User.find(@question.user_id).email %>
 </p>
 
-<%= form_for @answer do |f| %>
 
-  <%= f.label :title %> 
-  <%= f.text_field :title %> 
-
-  <%= f.label :body %> 
-  <%= f.text_area :body %> 
-
-  <%= f.hidden_field :question_id, value: @question.id %> 
-
-  <%= f.hidden_field :user_id, value: current_user.id  %>
-
-  <%= f.submit "Submit Answer" %>
-
+<% if @question.answers != [] %>
+  <p>
+    Answers: <br>
+    <% @question.answers.each do |answer| %>
+      <%= answer.title %><br>
+      <%= answer.body %><br>
+      Employee Contact: <%= User.find(answer.user_id).email %><br>
+    <% end %>
+  </p>
 <% end %>
 
+<% if current_user.employee %>
+    <%= form_for @answer do |f| %>
+
+      <%= f.label :title %> 
+      <%= f.text_field :title %> 
+        
+      <%= f.label :body %> 
+      <%= f.text_area :body %> 
+
+      <%= f.hidden_field :question_id, value: @question.id %> 
+
+      <%= f.hidden_field :user_id, value: current_user.id  %>
+
+      <%= f.submit "Submit Answer" %>
+
+    <% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
