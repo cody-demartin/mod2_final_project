@@ -1,11 +1,17 @@
 <div class="topnav">
 <a class="active" href='/'>Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+<a href="/questions">Questions</a>
     <div class="topnav-centered">
         <%= image_tag("flatiron.png", {:style => "width:20px;"}) %>Flatiron Consulting
     </div>
     <div class="topnav-right">
-        <a href="account.html">Account</a>
-    </div>
+        <button class="dropbtna"><%= current_user.email %>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="topnav-right-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+  </div>
 </div>    

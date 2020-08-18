@@ -1,31 +1,38 @@
+<%= render 'top/topnav' %>
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Questions</h1>
+<div class="top-question">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Questions</h1>
 
-  <tbody>
-    <% @questions.each do |question| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= question.title %></td>
-        <td><%= question.body %></td>
-        <td><%= question.user %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Body</th>
+        <th>User email</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.title %></td>
+          <td><%= question.body %></td>
+          <td><%= question.user.email %></td>
+          <td><%= link_to 'Show', question %></td>
+          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Question', new_question_path %>
+  <br>
+
+  <%= link_to 'New Question', new_question_path %>
+
+</div>
