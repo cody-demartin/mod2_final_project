@@ -1,18 +1,21 @@
 <%= render 'top/topnav' %>
 
-<h1>Welcome Flatiron Consulting</h1>
+
+<div class="start">
+
+    <h1>Welcome Flatiron Consulting</h1>
 
 
-<% if current_user %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% if current_user.employee %>
-        <%= link_to 'Unanswered Questions', questions_path %>
+    <% if current_user %>
+        <% if current_user.employee %>
+            <%= link_to 'Unanswered Questions', questions_path %>
+        <% else %>
+            <%= link_to 'New Question', new_question_path %>
+        <% end %>
     <% else %>
-        <%= link_to 'New Question', new_question_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+
+        <%= link_to 'Sign in', new_user_session_path %>
     <% end %>
-<% else %>
-    <%= link_to 'Sign up', new_user_registration_path %>
 
-    <%= link_to 'Sign in', new_user_session_path %>
-<% end %>
-
+</div>

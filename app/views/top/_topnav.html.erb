@@ -1,17 +1,16 @@
+
 <div class="topnav">
-<a class="active" href='/'>Home</a>
-<a href="/questions">Questions</a>
+    <a href='/'>Home</a>
+    <a href="/questions">Questions</a>
     <div class="topnav-centered">
         <%= image_tag("flatiron.png", {:style => "width:20px;"}) %>Flatiron Consulting
     </div>
     <div class="topnav-right">
-        <button class="dropbtna"><%= current_user.email %>
-            <i class="fa fa-caret-down"></i>
-        </button>
+        <button class="dropbtn"><%= current_user.email %></button>
         <div class="topnav-right-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#">Profile</a>
+            <a href="#">My questions</a>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
         </div>
-  </div>
+    </div>
 </div>    
