@@ -90,11 +90,7 @@
               <% end %>
             </tbody>
           </table>
-
           <br>
-
-          
-
         <% else %>
           <table>
             <thead>
@@ -123,6 +119,50 @@
           </table>
         <% end %>
         </div>
+        <% if current_user.employee %>
+            <div id="response"><table>
+            <h1>Previous Responses</h1>
+              <thead>
+              <tr>
+                  <th>To User:</th>
+              </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <% current_user.response_user_i.each do |response| %>
+                      <td><%= response.email %></td>
+                </tr>
+                  <% end %>
+              </tbody>
+
+              <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Body</th>
+              </tr>
+              </thead>
+              <tbody>
+                  <tr>   
+                  <% current_user.responses.all.each do |response| %>
+                    <td><%= response.title %></td>
+                    <td><%= response.body %></td>
+                  </tr>
+                  <% end %>   
+              </tbody>
+
+
+            </table></div>
+        <% end %>
+    </div>
   </div>
 </div>
-</div>
+
+
+
+
+
+
+
+
+  
