@@ -2,12 +2,14 @@
 
 
 <div class="start">
+    
     <% if current_user.employee %>
         <%= link_to 'Unanswered Questions', questions_path %>
     <% else %>
-    <div id="consultants">
+    <%# <div id="consultants">
         <h3>&#11088; Our Top Consultants &#11088;</h3>
-    </div>
+    </div> %>
+    
     <div class="consultant-container">
         <div id="consultant1">
             <div class="consultant-top">
@@ -20,6 +22,7 @@
                 <h4>Field of expertise: Finance</h4>
             </div>
         </div>
+        
         <div id="consultant2">
             <div class="consultant-top">
                 <h3>Ian Grubbs</h3>
@@ -31,6 +34,7 @@
                 <h4>Field of expertise: Billing</h4>
             </div>
         </div>
+        
         <div id="consultant3">
             <div class="consultant-top">
                 <h3>Alex Schelchere</h3>
@@ -42,6 +46,7 @@
                 <h4>Field of expertise: Admission</h4>
             </div>  
         </div>
+        
         <div id="consultant4">
             <div class="consultant-top">
                 <h3>Tashawn Williams</h3>
@@ -53,6 +58,7 @@
                 <h4>Field of expertise: Job</h4>
             </div>
         </div>
+    
     </div>
 
     <% end %>
