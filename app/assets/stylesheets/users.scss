@@ -11,41 +11,13 @@
     margin-top: 7%;
 }
 
-#left {
-    border-style: solid;
-    border-bottom-left-radius: 30px;
-    height: 100%;
-    margin-left: 15%;
-    width: 18%;
-}
-
-#pic {
-    width: 100%;
-    height: auto;
-}
-
-#pic-img {
-    width: 100%;
-    height: auto;
-}
-
-#profile {
-    text-align: right;
-    font-size: 15px;
-    margin-right: 2px;
-}
-
-#user-email {
-    width: 100%;
-    height: 100px;
-
-}
-
 #middle {
     height: 100%;
-
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     width: 50%;
     border-style: solid;
+    margin-left: 30%;
 }
 
 #middle-top {
@@ -55,8 +27,46 @@
 }
 
 #list {
-    margin-left: 15px;
-    margin-top: 10%;
+    display: flex;
+    height: 90%;
+}
+
+#list-left {
+    width: 35%;
+    height: 100%;
+}
+
+#profile-pic {
+    border-style: solid;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 30px;
+}
+
+#pic {
+    width: 100%;
+    height: auto;
+}
+
+#profile {
+    text-align: right;
+    font-size: 15px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+#user-email {
+    width: 100%;
+    height: 100px;
+
+}
+
+#list-right {
+    margin-top: 4%;
+    width: 55%;
+    height: 100%;
+    float: right;
+    margin-left: 5%;
 }
 
 #name {
