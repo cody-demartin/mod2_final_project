@@ -19,7 +19,8 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url(flatiron.png);
-    border: 5px solid black;
+    border: 2px solid white;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,14 +29,22 @@ html {
 
 .welcome-text {
     grid-area: welcome;
+    color: white;
+    font-size: 20px;
+    -webkit-text-stroke: 2px black;
 }
 
 .to-text {
     grid-area: to;
+    color: white;
+    -webkit-text-stroke: 2px black;
 }
 
 .flatiron-text {
     grid-area: flatiron;
+    color: white;
+    font-size: 20px;
+    -webkit-text-stroke: 2px black;
 }
 
 .start  {
