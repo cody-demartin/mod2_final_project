@@ -25,10 +25,10 @@
   </div>
 
   
-  <p>
-    <strong>User:</strong>
-    <%= User.find(@question.user_id).email %>
-  </p>
+    <p>
+      <strong>User:</strong>
+      <%= User.find(@question.user_id).email %>
+    </p>
 </div>
 
   <% if @question.answers != [] %>
