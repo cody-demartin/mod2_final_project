@@ -14,7 +14,7 @@ class Question < ApplicationRecord
 
     def self.has_answers
         self.select do |question|
-            if question.answers 
+            if question.answers.exists?
                 question 
             end 
         end 
