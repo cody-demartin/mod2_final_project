@@ -1,54 +1,80 @@
-<p id="notice"><%= notice %></p>
+<div class="show-page-wrapper">
+  <%= render 'top/topnav' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+  <p id="notice"><%= notice %></p>
+<div class="question-wrapper">
+  
+  <div class="question-title">
+     <p>
+        <%= @question.title %>
+      </p>
+  </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
-</p>
+  <div class="question-topic">
+    <p>
+      Topic:
+        <%= @question.category %>
+    </p>
+  </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @question.body %>
-</p>
+  <div class="question-content">
+    <p>
+      <strong>Body:</strong>
+      <%= @question.body %>
+    </p>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= User.find(@question.user_id).email %>
-</p>
-
-
-<% if @question.answers != [] %>
+  
   <p>
-    Answers: <br>
-    <% @question.answers.each do |answer| %>
-      <%= answer.title %><br>
-      <%= answer.body %><br>
-      Employee Contact: <%= User.find(answer.user_id).email %><br>
-    <% end %>
+    <strong>User:</strong>
+    <%= User.find(@question.user_id).email %>
   </p>
-<% end %>
+</div>
 
-<% if current_user.employee %>
-    <%= form_for @answer do |f| %>
+  <% if @question.answers != [] %>
+    <p>
+    <div id="answer-header">
+      Answers <br>
+    </div>
+      <% @question.answers.each do |answer| %>
+      <div class="answers-wrapper">    
+        <div class="answer-title">
+          <%= answer.title.capitalize %><br>
+        </div>
+        <div class="answer-body">
+          <%= answer.body %><br>
+        </div>
+        <div class="answer-email">  
+          Employee Contact: <%= User.find(answer.user_id).email %><br>
+        </div>
+      </div>  
+      <% end %>
+    </p>
+  <% end %>
 
-      <%= f.label :title %> 
-      <%= f.text_field :title %> 
-        
-      <%= f.label :body %> 
-      <%= f.text_area :body %> 
 
-      <%= f.hidden_field :question_id, value: @question.id %> 
+  <div class="answer-form">
+  <% if current_user.employee %>
+      <%= form_for @answer do |f| %>
 
-      <%= f.hidden_field :user_id, value: current_user.id  %>
+        <%= f.label :title %> 
+        <%= f.text_field :title %> 
+          
+        <%= f.label :body %> 
+        <%= f.text_area :body %> 
 
-      <%= f.submit "Submit Answer" %>
+        <%= f.hidden_field :question_id, value: @question.id %> 
 
-    <% end %>
-<% end %>
+        <%= f.hidden_field :user_id, value: current_user.id  %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+        <%= f.submit "Submit Answer" %>
+
+      <% end %>
+  <% end %>
+  </div>
+
+  <div class="back">
+    <%= link_to 'Edit', edit_question_path(@question) %> |
+    <%= link_to 'Back', questions_path %>
+  </div>
+</div>

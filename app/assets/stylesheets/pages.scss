@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .start  {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
     top: 18%;
 }
@@ -26,6 +29,8 @@
 }
 
 .consultant-pic {
+    grid-area: photo;
+    place-self: center center;
     width: 100%;
     height: auto;
 }
