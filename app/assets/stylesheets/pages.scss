@@ -19,7 +19,8 @@
 }
 
 .consultant-top {
-    border-style:solid;
+    border: 2px solid;
+    border-radius: 8px;
     text-align: center;
     font-size: 20px;
 }
@@ -44,28 +45,32 @@ img {
 #consultant1 {
     width: 20%;
     height: 100%;
-    border-style: solid;
+    border: 2px solid;
+    border-radius: 12px;
     margin-left: 5%;
 }
 
 #consultant2 {
     width: 20%;
     height: 100%;
-    border-style: solid;
+    border: 2px solid;
+    border-radius: 12px;
     margin-left: 5%;
 }
 
 #consultant3 {
     width: 20%;
     height: 100%;
-    border-style: solid;
+    border: 2px solid;
+    border-radius: 12px;
     margin-left: 5%;
 }
 
 #consultant4 {
     width: 20%;
     height: 100%;
-    border-style: solid;
+    border: 2px solid;
+    border-radius: 12px;
     margin-right: 5%;
     margin-left: 5%;
 }

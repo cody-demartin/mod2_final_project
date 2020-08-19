@@ -8,7 +8,7 @@
         <div class="topnav-right">
             <button class="dropbtn"><%= current_user.email %></button>
             <div class="topnav-right-content">
-                <p><a href="#">Profile</a></p>
+                <p><%= link_to 'Profile', user_path(current_user) %></p>
                 <p><a href="#">My questions</a></p>
                 <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
             </div>

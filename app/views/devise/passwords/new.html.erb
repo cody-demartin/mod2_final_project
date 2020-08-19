@@ -2,14 +2,13 @@
 
   <div class="text">
       <div class="top">
-        <%= image_tag("flatiron.png", {:style => "width:50px;"}) %><h1>Flatiron Consult</h1>
+        <%= image_tag("flatiron.png", {:style => "width:50px;"}) %><h1>Flatiron Consulting</h1>
       </div>
       <br>
-    <h2>Forgot your password?</h2>
+    <h2>Reset my password</h2>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <br>
       <br>
       <br>
       <div class="field">
@@ -22,6 +21,7 @@
       </div>
     <% end %>
 
+    <br>
     <br>
     <br>
     <%= render "devise/shared/links" %>
