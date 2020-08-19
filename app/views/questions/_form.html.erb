@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="title-field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="cat-field">
     <%= form.label :category %>
     <%= form.select :category, [ 'Finance','Billing','Admission','Job' ], :prompt => 'Select One' %>
   </div>
 
 
 
-  <div class="field">
+  <div class="body-field">
     <%= form.label :body %>
     <%= form.rich_text_area :body %>
   </div>
