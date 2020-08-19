@@ -34,14 +34,14 @@
                         <h3><%= form.label :Company %></h3>
                         <h3><%= form.text_field :company %></h3>
                     </div>
+                    <div id="email">
+                        <h3><%= form.label :Email %></h3>
+                        <h3><%= current_user.email %></h3>
+                    </div>
+                    <div id="middle-bottom">
+                        <%= form.button "Save" %>
+                    </div>
                 <% end %>
-                <div id="email">
-                    <h3>Email</h3> 
-                    <h3><%= current_user.email %></h3>
-                </div>
-            </div>
-            <div id="middle-bottom">
-                <button>Save</button>
             </div>
         </div>
     </div>

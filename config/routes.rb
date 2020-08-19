@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   get '/forbidden', to: 'authorizations#forbidden', as: 'forbidden'
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 
   
   
