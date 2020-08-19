@@ -24,11 +24,13 @@
     </p>
   </div>
 
-  
+  <div class="question-asker">
     <p>
       <strong>User:</strong>
       <%= User.find(@question.user_id).email %>
     </p>
+  </div>
+  
 </div>
 
   <% if @question.answers != [] %>
