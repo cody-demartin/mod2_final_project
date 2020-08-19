@@ -10,8 +10,10 @@
                 <div id="list-left">
                     <div id="profile-pic">
                         <div id="pic">
-                            <% if current_user.employee = "false" %>
+                            <% if current_user.employee == false %>
                                 <%= image_tag("semin.jpeg") %>
+                            <% else current_user.expertise == "finance" %>
+                                <%= image_tag("greg.jpeg") %>
                             <% end %>
                         </div>
                         <div id="profile">
@@ -21,12 +23,15 @@
                             <% if current_user.company.split('').count > 0 %>
                                 <h3>Company: <%= current_user.company %></h3>
                             <% end %>
+                            <% if current_user.expertise.split('').count > 0 %>
+                                <h3>Expertise: <%= current_user.expertise %></h3>
+                            <% end %>
                             <div id="user-email">
                                 <h3>Email: <%= current_user.email %></h3>
                              </div>
-                            <div id="greeting">
-                                <p>Thank you for being a memeber of Flatiron Consulting!</p>
-                            </div>
+                        </div>
+                        <div id="greeting">
+                            <p>Thank you for being a memeber of Flatiron Consulting!</p>
                         </div>
                     </div>
                 </div>
@@ -40,6 +45,12 @@
                             <h2><%= form.label :Company %></h2>
                             <h2><%= form.text_field :company %></h2>
                         </div>
+                        <% if current_user.expertise.split('').count > 0 %>
+                            <div id="expertise">
+                            <h2><%= form.label :Expertise %></h2>
+                            <h2><%= form.text_field :expertise %></h2>
+                        </div>
+                        <% end %>
                         <div id="email">
                             <h2><%= form.label :Email %></h2>
                             <h2><%= current_user.email %></h2>

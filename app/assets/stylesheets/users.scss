@@ -12,6 +12,7 @@
 }
 
 #middle {
+    display: fixed;
     height: 100%;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -21,6 +22,7 @@
 }
 
 #middle-top {
+    display: fixed;
     border-style: solid;
     text-align: center;
     font-size: 18px;
@@ -37,6 +39,7 @@
 }
 
 #profile-pic {
+    display: fixed;
     border-style: solid;
     width: 100%;
     height: 100%;
@@ -45,14 +48,14 @@
 
 #pic {
     width: 100%;
-    height: auto;
 }
+
 
 #profile {
     text-align: right;
     font-size: 15px;
     width: 98%;
-    height: 175px;
+    height: 30%;
 }
 
 #user-email {
@@ -61,7 +64,7 @@
 }
 
 #greeting {
-    margin-top: 10%;
+    margin-bottom: 2%;
 }
 
 #list-right {
@@ -74,21 +77,26 @@
 
 #name {
     width: 100%;
-    height: 150px;
+    height: 125px;
 }
 
 #company {
     width: 100%;
-    height: 150px;
+    height: 125px;
+}
+
+#expertise {
+    width: 100%;
+    height: 125px;
 }
 
 #email {
     width: 100%;
-    height: 150px;
+    height: 125px;
 }
 
 #middle-bottom {
-
+    
     text-align: right;
     border-style: solid
     border-radius 15px;
