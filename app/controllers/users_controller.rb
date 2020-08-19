@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def admin
+    @responses = current_user.answers
+    byebug
+  end
+
   private
 
   def user_params
