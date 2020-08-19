@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
+  root to: 'pages#home'
   resources :answers
   resources :questions
-  root to: 'pages#home'
   devise_for :users
   get '/forbidden', to: 'authorizations#forbidden', as: 'forbidden'
-  resources :users, only: [:show, :edit, :update]
-
+  resources :users, only: [:index, :show, :edit, :update]
+  get '/admin', to: 'users#admin', as: 'admin'
   
   
 end
