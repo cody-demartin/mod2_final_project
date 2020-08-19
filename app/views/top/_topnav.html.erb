@@ -1,17 +1,34 @@
 <header>
     <h1 class="topnav">
-        <a href='/'>Home</a>
-        <a href="/questions">Questions</a>
-        <div class="topnav-centered">
-            <h2><%= image_tag("flatiron.png", {:style => "width:20px;"}) %>Flatiron Consulting</h2>
-        </div>
-        <div class="topnav-right">
-            <button class="dropbtn"><%= current_user.email %></button>
-            <div class="topnav-right-content">
-                <p><%= link_to 'Profile', user_path(current_user) %></p>
-                <p><a href="#">My questions</a></p>
-                <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+        <% if current_user.employee == false%>
+            <a href='/'>Home</a>
+            <a href="/questions">Questions</a>
+            <div class="topnav-centered">
+                <h2><%= image_tag("flatiron.png", {:style => "width:20px;"}) %>Flatiron Consulting</h2>
             </div>
-        </div>
+            <div class="topnav-right">
+                <button class="dropbtn"><%= current_user.email %></button>
+                <div class="topnav-right-content">
+                    <p><%= link_to 'Profile', user_path(current_user) %></p>
+                    <p><a href="#">My questions</a></p>
+                    <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+                </div>
+            </div>
+        <% else %>
+            <a href='/admin'>Home</a>
+            <a href="/questions">Questions</a>
+            <div class="topnav-centered">
+                <h2><%= image_tag("flatiron.png", {:style => "width:20px;"}) %>Flatiron Consulting</h2>
+            </div>
+            <div class="topnav-right">
+                <button class="dropbtn"><%= current_user.email %></button>
+                <div class="topnav-right-content">
+                    <p><%= link_to 'Profile', user_path(current_user) %></p>
+                    <p><a href="#">My questions</a></p>
+                    <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+                </div>
+            </div>
+        <% end %>
+        
     </h1>    
 </header>
