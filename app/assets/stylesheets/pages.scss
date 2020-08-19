@@ -20,7 +20,7 @@ html {
     transform: translate(-50%, -50%);
     background-image: url(flatiron.png);
     border: 2px solid white;
-    opacity: 0.9;
+    opacity: 0.8;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,9 +29,12 @@ html {
 
 .welcome-text {
     grid-area: welcome;
-    color: white;
+    color: #e6e9ec;
     font-size: 20px;
-    -webkit-text-stroke: 2px black;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
 }
 
 .to-text {
