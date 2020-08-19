@@ -1,6 +1,43 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+html { 
+    background: url("kai-pilger-mgFzfrrmGKI-unsplash.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+.welcome-wrapper {
+    height: 236px;
+    width: 236px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(flatiron.png);
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-text {
+    grid-area: welcome;
+}
+
+.to-text {
+    grid-area: to;
+}
+
+.flatiron-text {
+    grid-area: flatiron;
+}
+
 .start  {
     position: absolute;
     display: flex;

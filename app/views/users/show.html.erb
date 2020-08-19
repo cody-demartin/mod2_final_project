@@ -36,7 +36,9 @@
                     </div>
                 </div>
                 <div id="list-right">
+                    
                     <%= form_with(model: @user, local: true) do |form| %>
+                        
                         <div id="name">
                             <h2><%= form.label :Name %></h2>
                             <h2><%= form.text_field :name%></h2>
@@ -51,6 +53,7 @@
                             <h2><%= form.text_field :expertise %></h2>
                         </div>
                         <% end %>
+
                         <div id="email">
                             <h2><%= form.label :Email %></h2>
                             <h2><%= current_user.email %></h2>
