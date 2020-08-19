@@ -1,1 +1,28 @@
 <%= render 'top/topnav' %>
+
+<div class="start">
+    <h1>My Previous Responses</h1>
+    <div id="employee_response"><table>
+        <thead>
+        <tr>
+            <th>To User:</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @responses.all.each do |response| %>
+        <tr>
+            <td><%= response.title %></td>
+            <td><%= response.title %></td>
+            <td><%= response.body %></td>
+        </tr>
+        <% end %>   
+        </tbody>
+    </table></div>
+
+
+
+
+</div>
