@@ -1,3 +1,86 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+#all {
+
+    height:700px;
+    display: flex;
+    width: 100%;
+    margin-top: 7%;
+}
+
+#left {
+    border-style: solid;
+    border-bottom-left-radius: 30px;
+    height: 100%;
+    margin-left: 15%;
+    width: 18%;
+}
+
+#pic {
+    width: 100%;
+    height: auto;
+}
+
+#pic-img {
+    width: 100%;
+    height: auto;
+}
+
+#profile {
+    text-align: right;
+    font-size: 15px;
+    margin-right: 2px;
+}
+
+#user-email {
+    width: 100%;
+    height: 100px;
+
+}
+
+#middle {
+    height: 100%;
+
+    width: 50%;
+    border-style: solid;
+}
+
+#middle-top {
+    border-style: solid;
+    text-align: center;
+    font-size: 18px;
+}
+
+#list {
+    margin-left: 15px;
+    margin-top: 10%;
+}
+
+#name {
+    width: 100%;
+    height: 150px;
+    border-style: dotted;
+}
+
+#company {
+    width: 100%;
+    height: 150px;
+    border-style: dotted;
+}
+
+#email {
+    width: 100%;
+    height: 150px;
+    border-style: dotted;
+}
+
+#middle-bottom {
+
+    text-align: right;
+    border-style: solid
+    border-radius 15px;
+    margin-right: 7%;
+}
