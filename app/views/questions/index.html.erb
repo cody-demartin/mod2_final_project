@@ -5,8 +5,8 @@
   <div class="unanswered">
     <h1>Unanswered Questions</h1>
         <% @unanswered = @questions.no_answers %>
-            <% if current_user.employee %>
-            <table>
+            <% if current_user.employee  %>
+            <div class="tables"><table>
                 <thead>
                 <tr>
                     <th>Title</th>
@@ -20,7 +20,7 @@
                 <% @unanswered.each do |question| %>
                     <tr>
                     <td><%= question.title %></td>
-                    <td><%= question.body %></td>
+                    <td><div class="table-body"><%= question.body %></div></td>
                     <td><%= question.user.email %></td>
                     <td><%= link_to 'Show', question %></td>
                     <td><%= link_to 'Edit', edit_question_path(question) %></td>
@@ -28,12 +28,12 @@
                     </tr>
                 <% end %>
                 </tbody>
-            </table>
+            </table></div>
 
             <br>
 
             <% else %>
-            <table>
+            <div class="tables"><table>
                 <thead>
                 <tr>
                     <th>Title</th>
@@ -48,7 +48,7 @@
                     <tr>
                     <% if question.user_id == current_user.id %>
                         <td><%= question.title %></td>
-                        <td><%= question.body %></td>
+                        <td><div class="table-body"><%= question.body %></div></td>
                         <td><%= question.user.email %></td>
                         <td><%= link_to 'Show', question %></td>
                         <td><%= link_to 'Edit', edit_question_path(question) %></td>
@@ -57,7 +57,7 @@
                     </tr>
                 <% end %>
                 </tbody>
-            </table>
+            </table></div>
             <% end %>
              <div id="new-question-button-"><%= button_to 'New Question', new_question_path, method: :get %></div>
       </div>
@@ -81,7 +81,7 @@
               <% @answered.each do |question| %>
                 <tr>
                   <td><%= question.title %></td>
-                  <td><%= question.body %></td>
+                  <td><div class="table-body"><%= question.body %></div></td>
                   <td><%= question.user.email %></td>
                   <td><%= link_to 'Show', question %></td>
                   <td><%= link_to 'Edit', edit_question_path(question) %></td>
@@ -111,7 +111,7 @@
                 <tr>
                   <% if question.user_id == current_user.id %>
                     <td><%= question.title %></td>
-                    <td><%= question.body %></td>
+                    <td><div class="table-body"><%= question.body %></div></td>
                     <td><%= question.user.email %></td>
                     <td><%= link_to 'Show', question %></td>
                     <td><%= link_to 'Edit', edit_question_path(question) %></td>
