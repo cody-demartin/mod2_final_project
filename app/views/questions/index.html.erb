@@ -1,67 +1,129 @@
 <%= render 'top/topnav' %>
 
 
-<p id="notice"><%= notice %></p>
+<div class="start">
+  <div class="unanswered">
+    <h1>Unanswered Questions</h1>
+        <% @unanswered = @questions.no_answers %>
+            <% if current_user.employee  %>
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>User email</th>
+                    <th colspan="3"></th>
+                </tr>
+                </thead>
 
-<div class="top-question">
+                <tbody>
+                <% @unanswered.each do |question| %>
+                    <tr>
+                    <td><%= question.title %></td>
+                    <td><%= question.body %></td>
+                    <td><%= question.user.email %></td>
+                    <td><%= link_to 'Show', question %></td>
+                    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+                    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
 
-  <h1>Questions</h1>
+            <br>
 
-  
-<% if current_user.employee  %>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>User email</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+            <% else %>
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>User email</th>
+                    <th colspan="3"></th>
+                </tr>
+                </thead>
 
-    <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td><%= question.title %></td>
-          <td><%= question.body %></td>
-          <td><%= question.user.email %></td>
-          <td><%= link_to 'Show', question %></td>
-          <td><%= link_to 'Edit', edit_question_path(question) %></td>
-          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+                <tbody>
+                <% @unanswered.each do |question| %>
+                    <tr>
+                    <% if question.user_id == current_user.id %>
+                        <td><%= question.title %></td>
+                        <td><%= question.body %></td>
+                        <td><%= question.user.email %></td>
+                        <td><%= link_to 'Show', question %></td>
+                        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+                        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+            <% end %>
+             <div id="new-question-button-"><%= button_to 'New Question', new_question_path, method: :get %></div>
+      </div>
+      
+  </div>
 
-  <br>
+  <div class="answered">
+    <h1>Answered Questions</h1>
+        <% @answered = @questions.has_answers %>
+        <% if current_user.employee  %>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>User email</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
-  <%= link_to 'New Question', new_question_path %>
+            <tbody>
+              <% @answered.each do |question| %>
+                <tr>
+                  <td><%= question.title %></td>
+                  <td><%= question.body %></td>
+                  <td><%= question.user.email %></td>
+                  <td><%= link_to 'Show', question %></td>
+                  <td><%= link_to 'Edit', edit_question_path(question) %></td>
+                  <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-<% else %>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>User email</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+          <br>
 
-    <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <% if question.user_id == current_user.id %>
-            <td><%= question.title %></td>
-            <td><%= question.body %></td>
-            <td><%= question.user.email %></td>
-            <td><%= link_to 'Show', question %></td>
-            <td><%= link_to 'Edit', edit_question_path(question) %></td>
-            <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+          
+
+        <% else %>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>User email</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @answered.each do |question| %>
+                <tr>
+                  <% if question.user_id == current_user.id %>
+                    <td><%= question.title %></td>
+                    <td><%= question.body %></td>
+                    <td><%= question.user.email %></td>
+                    <td><%= link_to 'Show', question %></td>
+                    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+                    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>
+        </div>
+  </div>
 </div>
+

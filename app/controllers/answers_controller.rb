@@ -4,7 +4,11 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Answer.all
+    if current_user.employee 
+      @answers = Answer.all
+    else
+      redirect_to forbidden_path
+    end 
   end
 
   # GET /answers/1
@@ -14,11 +18,18 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    @answer = current_user.answers.build
+    if current_user.employee 
+      @answer = current_user.answers.build
+    else
+      redirect_to forbidden_path
+    end 
   end
 
   # GET /answers/1/edit
   def edit
+    if current_user.employee == false 
+      redirect_to forbidden_path
+    end 
   end
 
   # POST /answers
