@@ -2,20 +2,59 @@
 
 
 <div class="start">
-
-    <h1>Welcome Flatiron Consulting</h1>
-
-
-    <% if current_user %>
-        <% if current_user.employee %>
-            <%= link_to 'Unanswered Questions', questions_path %>
-        <% else %>
-            <%= link_to 'New Question', new_question_path %>
-        <% end %>
+    <% if current_user.employee %>
+        <%= link_to 'Unanswered Questions', questions_path %>
     <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %>
+    <div id="consultants">
+        <h3>&#11088; Our Top Consultants &#11088;</h3>
+    </div>
+    <div class="consultant-container">
+        <div id="consultant1">
+            <div class="consultant-top">
+                <h5>Greg Dwyer</h5>
+            </div>
+            <div class="consultant-pic">
+                <%= image_tag("greg.jpeg") %>
+            </div>
+            <div class="consultant-bottom">
+                <h4>Field of expertise: Finance</h4>
+            </div>
+        </div>
+        <div id="consultant2">
+            <div class="consultant-top">
+                <h5>Ian Grubbs</h5>
+            </div>
+            <div class="consultant-pic">
+                <%= image_tag("ian.jpeg") %>
+            </div>
+            <div class="consultant-bottom">
+                <h4>Field of expertise: Billing</h4>
+            </div>
+        </div>
+        <div id="consultant3">
+            <div class="consultant-top">
+                <h5>Alex Schelchere</h5>
+            </div>
+            <div class="consultant-pic">
+                <%= image_tag("alex.png") %> 
+            </div>
+            <div class="consultant-bottom">
+                <h4>Field of expertise: Admission</h4>
+            </div>  
+        </div>
+        <div id="consultant4">
+            <div class="consultant-top">
+                <h5>Tashawn Williams</h5>
+            </div>
+            <div class="consultant-pic">
+                <%= image_tag("tashawn.jpeg") %>
+            </div>
+            <div class="consultant-bottom">
+                <h4>Field of expertise: Job</h4>
+            </div>
+        </div>
+    </div>
 
-        <%= link_to 'Sign in', new_user_session_path %>
     <% end %>
 
 </div>
