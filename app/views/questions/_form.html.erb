@@ -10,21 +10,20 @@
       </ul>
     </div>
   <% end %>
-
+<div class="new-question-wrapper">
   <div class="title-field">
-    <%= form.label :title %>
+    <%= form.label "Question Title:" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="cat-field">
-    <%= form.label :category %>
+    <%= form.label "Question Topic:" %>
     <%= form.select :category, [ 'Finance','Billing','Admission','Job' ], :prompt => 'Select One' %>
   </div>
 
 
 
   <div class="body-field">
-    <%= form.label :body %>
     <%= form.rich_text_area :body %>
   </div>
 
@@ -35,4 +34,5 @@
   <div class="actions">
     <%= form.submit "Submit" %>
   </div>
+</div>  
 <% end %>
