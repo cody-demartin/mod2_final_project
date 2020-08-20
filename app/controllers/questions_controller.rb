@@ -37,7 +37,7 @@ class QuestionsController < ApplicationController
     @user = current_user 
     respond_to do |format|
       if @question.save
-        UserMailer.answer_email(User.first).deliver
+        UserMailer.new_user_email(@user).deliver
         format.html { redirect_to @question}
         format.json { render :show, status: :created, location: @question }
       else
