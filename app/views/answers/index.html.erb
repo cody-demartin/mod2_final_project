@@ -1,32 +1,26 @@
 <%= render 'top/topnav' %>
 
 <div class='start'>
-
+  <div class='search-bar'>
+      <h4>Search by Company:</h4>
+    <div class='search-item'>
+      <%= form_tag(users_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag ("Search") %>
+      <% end %>
+    </div>
+  </div>
   <div class="response">
       <div class="response-top">
         <h1>Previous Responses</h1>
       </div>
       <div class="response-bottom">
         <table id="table1">
-            <thead>
-            <tr>
-                <th>To User:</th>
-            </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <% current_user.response_user_i.each do |response| %>
-                    <td><%= response.email %></td>
-              </tr>
-                <% end %>
-            </tbody>
-        </table>
-        <table>
           <thead>
             <tr>
               <th>Title</th>
               <th>Body</th>
+              <th>Time of upload</th>
               <th colspan="3">Options</th>
             </tr>
           </thead>
@@ -36,6 +30,7 @@
               <tr>
                 <td><%= answer.title %></td>
                 <td><%= answer.body %></td>
+                <td><%= answer.updated_at %></td>
                 <td><%= link_to 'Show', answer %></td>
                 <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
                 <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

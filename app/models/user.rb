@@ -29,7 +29,24 @@ class User < ApplicationRecord
   def response_user_i
     self.response_user_id.map do |number|
       User.all.select{|i|i.id == number}
-    end.flatten
+    end.flatten.uniq
   end
+
+  def response_email
+    self.response_user_i.map(&:email)
+  end
+
+
+
+  def self.search(search)
+    if search
+      company = User.where(company: search)
+    else
+      puts "We could not find that company. Please try again."
+    end
+  end
+
+
+
 
 end
