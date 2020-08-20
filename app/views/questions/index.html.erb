@@ -120,46 +120,6 @@
           </table>
         <% end %>
         </div>
-        <% if current_user.employee %>
-            <div class="response">
-              <div class="response-top">
-                <h1>Previous Responses</h1>
-              </div>
-              <div class="response-bottom">
-                <table id="table1">
-                    <thead>
-                    <tr>
-                        <th>To User:</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <% current_user.response_user_i.each do |response| %>
-                            <td><%= response.email %></td>
-                      </tr>
-                        <% end %>
-                    </tbody>
-                  </table>
-               <table id="table2">
-                    <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Body</th>
-                    </tr>
-                    </thead>
-                      <tbody>
-                          <tr>   
-                          <% current_user.responses.all.each do |response| %>
-                            <td><%= response.title %></td>
-                            <td><%= response.body %></td>
-                          </tr>
-                          <% end %>   
-                      </tbody>
-                  </table>
-              </div>
-            </div>
-        <% end %>
     </div>
   </div>
 </div>
