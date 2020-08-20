@@ -46,7 +46,9 @@ class User < ApplicationRecord
     end
   end
 
-
+  def both_arrays(array1,array2)
+    array1.select{|i| array2.include?(i)}
+  end
 
 
 end

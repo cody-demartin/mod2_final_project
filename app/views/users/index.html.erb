@@ -4,8 +4,9 @@
 <div class='start'>
     <div id='users'>
         
-        <% @users.each do |i| %>
-                <%= i.email %>
-        <% end %>
+    <% @common_emails.each do |email| %>
+        <%= email %>
+    <% end %>
+
     </div>
 </div>
