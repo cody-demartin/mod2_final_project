@@ -6,7 +6,7 @@
     <div class="unanswered">
       <h1>Unanswered Questions</h1>
           <% @unanswered = @questions.no_answers %>
-              <% if current_user.employee  %>
+              <% if current_user.employee %>
               <div class="tables"><table>
                   <thead>
                   <tr>
@@ -22,7 +22,9 @@
                   <% @unanswered.each do |question| %>
                       <tr>
                       <td><%= question.title %></td>
-                      <td><%= question.category %></td>
+                      <% if question.category.downcase == current_user.expertise.downcase %>
+                        <td><%= question.category %></td>
+                      <% end %>
                       <td><div class="table-body"><%= question.body %></div></td>
                       <td><%= question.user.email %></td>
                       <td><%= link_to 'Show', question %></td>

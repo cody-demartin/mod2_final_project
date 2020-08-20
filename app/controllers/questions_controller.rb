@@ -3,9 +3,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-
       @questions = Question.all
-
+    
   end
 
   # GET /questions/1

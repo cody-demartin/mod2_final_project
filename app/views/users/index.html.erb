@@ -4,8 +4,14 @@
 <div class='start'>
     <div id='users'>
         
-        <% @users.each do |i| %>
-                <%= i.email %>
+        <% @users.map do |i| %>
+            <% i.email %>
+            <% current_user.response_email.each do |e| %>
+                <% e %>
+                <% if i.email == e %>
+                    <%= i.email %>
+                <% end %>
+            <% end %>
         <% end %>
     </div>
 </div>
