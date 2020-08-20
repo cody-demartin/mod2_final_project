@@ -2,7 +2,7 @@ class UsersController < ApplicationController
  
   def index
     @users = User.search(params[:search])
-    @common_emails = current_user.both_arrays(current_user.response_email, @users.map(&:email).flatten)
+    @common_emails = current_user.both_arrays(current_user.response_user_i, @users)
   end
 
   def show
