@@ -8,6 +8,15 @@ class User < ApplicationRecord
   has_many :answers 
 
 
+  def self.all_emp_email
+    self.all.map do |user|
+      if user.employee
+        user.email 
+      end 
+    end 
+  end 
+
+
   def responses
     self.answers
   end

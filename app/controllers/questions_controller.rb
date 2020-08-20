@@ -12,9 +12,6 @@ class QuestionsController < ApplicationController
   def show
     @answer = current_user.answers.build 
     @user = User.find(@question.user_id)
-    # if @answer 
-    #   UserMailer.answer_email(@user).deliver
-    # end
   end
 
   # GET /questions/new
@@ -37,7 +34,8 @@ class QuestionsController < ApplicationController
     @user = current_user 
     respond_to do |format|
       if @question.save
-        UserMailer.new_user_email(@user).deliver
+        UserMailer.new_question_email(@user).deliver
+        EmployeeMailer.new_customer_ques(@user).deliver
         format.html { redirect_to @question}
         format.json { render :show, status: :created, location: @question }
       else

@@ -37,10 +37,12 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = current_user.answers.build(answer_params)
-    # @question = Question.find(@answer.question_id)
-    # @user = User.find(@question.user_id)
+    
     respond_to do |format|
       if @answer.save
+        @question = Question.find(@answer.question_id)
+        @user = User.find(@question.user_id)
+        UserMailer.answer_email(@user).deliver
         format.html { redirect_to questions_path, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
