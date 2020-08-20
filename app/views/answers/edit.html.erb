@@ -1,6 +1,15 @@
-<h1>Editing Answer</h1>
+<%= render 'top/topnav' %>
 
-<%= render 'form', answer: @answer %>
 
-<%= link_to 'Show', @answer %> |
-<%= link_to 'Back', answers_path %>
+<div class='start'>
+    <div class='response'>
+        <div class="table1">
+            <h1>Edit Answer</h1>
+
+            <%= render 'form', answer: @answer %>
+
+            <%= link_to 'Show', @answer %> |
+            <%= link_to 'Back', answers_path %>
+        </div>
+    </div>
+</div>

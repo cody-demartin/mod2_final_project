@@ -129,6 +129,7 @@ table {
 }
 
 .title-field {
+    margin-left: 35%;
     text-align: center;
     width: 300px;
     padding: 10px;
@@ -137,6 +138,8 @@ table {
 }
 
 .cat-field {
+    margin-left: 35%;
+    position: center;
     text-align: center;
     width: 300px;
     padding: 10px;
@@ -147,7 +150,6 @@ table {
 .body-field {
     text-align: left;
     width: 100%;
-    padding: 10px;
     background-color: white;
     height: 100%;
 }
@@ -208,5 +210,3 @@ tr:hover {background-color: #f5f5f5;}
 .answer-form {
     margin-bottom: 75px;
 }
-
-

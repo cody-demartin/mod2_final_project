@@ -14,6 +14,7 @@ class AnswersController < ApplicationController
   # GET /answers/1
   # GET /answers/1.json
   def show
+    @answer = Answer.all.find(params[:id])
   end
 
   # GET /answers/new

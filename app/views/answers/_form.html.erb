@@ -18,18 +18,9 @@
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.rich_text_area :body %>
   </div>
 
-  <div class="field">
-    <%= form.label :question_id %>
-    <%= form.number_field :question_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

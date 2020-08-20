@@ -11,6 +11,7 @@
                   <thead>
                   <tr>
                       <th>Title</th>
+                      <th>Category</th>
                       <th>Body</th>
                       <th>User email</th>
                       <th colspan="3">Options</th>
@@ -21,6 +22,7 @@
                   <% @unanswered.each do |question| %>
                       <tr>
                       <td><%= question.title %></td>
+                      <td><%= question.category %></td>
                       <td><div class="table-body"><%= question.body %></div></td>
                       <td><%= question.user.email %></td>
                       <td><%= link_to 'Show', question %></td>
@@ -38,6 +40,7 @@
                   <thead>
                   <tr>
                       <th>Title</th>
+                      <th>Category</th>
                       <th>Body</th>
                       <th>User email</th>
                       <th colspan="3">Options</th>
@@ -49,6 +52,7 @@
                       <tr>
                       <% if question.user_id == current_user.id %>
                           <td><%= question.title %></td>
+                          <td><%= question.category %></td>
                           <td><div class="table-body"><%= question.body %></div></td>
                           <td><%= question.user.email %></td>
                           <td><%= link_to 'Show', question %></td>
@@ -60,7 +64,9 @@
                   </tbody>
               </table></div>
               <% end %>
+              <% if current_user.employee == false %>
               <div id="new-question-button-"><%= button_to 'New Question', new_question_path, method: :get %></div>
+              <% end %>
         </div>     
   </div>
 
@@ -72,6 +78,7 @@
             <thead>
               <tr>
                 <th>Title</th>
+                <th>Category</th>
                 <th>Body</th>
                 <th>User E-mail</th>
                 <th colspan="3">Options</th>
@@ -82,6 +89,7 @@
               <% @answered.each do |question| %>
                 <tr>
                   <td><%= question.title %></td>
+                  <td><%= question.category %></td>
                   <td><div class="table-body"><%= question.body %></div></td>
                   <td><%= question.user.email %></td>
                   <td><%= link_to 'Show', question %></td>
@@ -97,6 +105,7 @@
             <thead>
               <tr>
                 <th>Title</th>
+                <th>Category</th>
                 <th>Body</th>
                 <th>User email</th>
                 <th colspan="3">Options</th>
@@ -108,6 +117,7 @@
                 <tr>
                   <% if question.user_id == current_user.id %>
                     <td><%= question.title %></td>
+                    <td><%= question.category %></td>
                     <td><div class="table-body"><%= question.body %></div></td>
                     <td><%= question.user.email %></td>
                     <td><%= link_to 'Show', question %></td>

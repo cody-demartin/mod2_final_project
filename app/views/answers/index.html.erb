@@ -2,20 +2,17 @@
 
 <div class='start'>
   <div class='search-bar'>
-      <h4>Search by Company:</h4>
-    <div class='search-item'>
       <%= form_tag(users_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search]) %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Search by Company") %>
         <%= submit_tag ("Search") %>
       <% end %>
-    </div>
   </div>
   <div class="response">
       <div class="response-top">
         <h1>Previous Responses</h1>
       </div>
       <div class="response-bottom">
-        <table id="table1">
+        <table class="table1">
           <thead>
             <tr>
               <th>Title</th>

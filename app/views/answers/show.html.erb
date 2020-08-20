@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= render 'top/topnav' %>
 
-<p>
-  <strong>Question:</strong>
-  <%= @answer.question.body %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @answer.title %>
-</p>
+<div class='start'>
+  <div class='response'>
+      <table id="show-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Response</th>
+            <th>Question's user email</th>
+            <th>Question</th>
+            <th>Time of upload</th>
+          </tr>
+        </thead>
 
-<p>
-  <strong>Body:</strong>
-  <%= @answer.body %>
-</p>
+        <tbody>
+            <tr>
+              <td><%= @answer.title %></td>
+              <td><%= @answer.body %></td>
+              <td><%= @answer.question.user.email %></td>
+              <td><%= @answer.question.body %></td>
+              <td><%= @answer.updated_at %></td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @answer.user.email %>
-</p>
-
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', answers_path %>
+  

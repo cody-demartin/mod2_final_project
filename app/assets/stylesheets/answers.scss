@@ -4,17 +4,17 @@
 
 
 .search-bar {
-    width: 30%;
+    width: 40%;
     height: 150px;
 
 }
 
 .search-item {
-    
-    text-align: center;
+    text-align: right;
     border-style: solid;
     background-color: white;
     border-radius: 16px;
+    width: 100%;
 }
 
 .response {
@@ -42,6 +42,14 @@
     margin-bottom: 10px;
 }
 
-#table1 {
+.table1 {
     width: 100%;
+}
+
+#show-table {
+    margin-top: 10px;
+    width: 1002px;
+    height: auto;
+    min-width: 1002px;
+    min-height: 180px;
 }
