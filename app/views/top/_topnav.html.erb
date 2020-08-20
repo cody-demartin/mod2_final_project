@@ -2,6 +2,9 @@
     <h1 class="topnav">
             <a href='/'>Home</a>
             <a href="/questions">Questions</a>
+            <% if current_user.employee %>
+            <a href="/answers">Answers</a>
+            <% end %>
             <a href="/consultants">Consultants</a>
             <div class="topnav-centered">
                 <h2><%= image_tag("flatiron.png", {:style => "width:20px;"}) %>Flatiron Consulting</h2>
