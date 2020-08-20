@@ -12,9 +12,9 @@ class QuestionsController < ApplicationController
   def show
     @answer = current_user.answers.build 
     @user = User.find(@question.user_id)
-    if @answer 
-      UserMailer.answer_email(@user).deliver
-    end
+    # if @answer 
+    #   UserMailer.answer_email(@user).deliver
+    # end
   end
 
   # GET /questions/new
