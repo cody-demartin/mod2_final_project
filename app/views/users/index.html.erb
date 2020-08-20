@@ -3,9 +3,9 @@
 
 <div class='start'>
     <div id='users'>
-        <% current_user.response_user_i.map(&:email).each do |i| %>
-            <% i == (@users.map(&:email).map{|a| a}) %>
-                <%= i %>
+        
+        <% @users.each do |i| %>
+                <%= i.email %>
         <% end %>
     </div>
 </div>
