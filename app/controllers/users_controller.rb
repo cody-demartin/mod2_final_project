@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
  
+  def index
+    @users = User.search(params[:search])
+  end
+
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -14,13 +18,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  def answers
-  end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :company)
+    params.require(:user).permit(:email, :name, :company, :search)
   end
 
 
