@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   get '/forbidden', to: 'authorizations#forbidden', as: 'forbidden'
   resources :users, only: [:index, :show, :edit, :update]
-  get '/admin', to: 'users#admin', as: 'admin'
+  get '/consultants', to: 'pages#consultants', as: 'consultants'
   
   
 end

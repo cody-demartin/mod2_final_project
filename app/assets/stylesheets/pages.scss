@@ -62,12 +62,15 @@ html {
 #consultants {
     font-size: 25px;
     text-align: center;
+    background-color: white;
+    border-radius: 16px;
 }
 
 .consultant-container {
     display: flex;
     height: 650px;
     margin-top: 50px;
+
 }
 
 .consultant-top {
@@ -101,6 +104,7 @@ img {
     border: 2px solid;
     border-radius: 12px;
     margin-left: 5%;
+    background-color: white;
 }
 
 #consultant2 {
@@ -109,6 +113,7 @@ img {
     border: 2px solid;
     border-radius: 12px;
     margin-left: 5%;
+    background-color: white;
 }
 
 #consultant3 {
@@ -117,6 +122,7 @@ img {
     border: 2px solid;
     border-radius: 12px;
     margin-left: 5%;
+    background-color: white;
 }
 
 #consultant4 {
@@ -126,5 +132,6 @@ img {
     border-radius: 12px;
     margin-right: 5%;
     margin-left: 5%;
+    background-color: white;
 }
 
