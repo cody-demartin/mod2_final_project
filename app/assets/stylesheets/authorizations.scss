@@ -1,0 +1,17 @@
+.ian {
+    height: 1075px;
+    width: 1711px;
+    background-image: url("403_error.jpg");
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-right: 400px;
+}
+
+.button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
