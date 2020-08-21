@@ -18,7 +18,7 @@
 
             <tbody>
                 <% @common_emails.each do |i| %>
-                    <% questions = i.questions.all.select{|u| u.category == current_user.expertise} %>
+                    <% questions = i.questions.all.select{|u| u.category.downcase == current_user.expertise.downcase} %>
                 <% questions.each do |question| %>
                 <tr>
                         <% if question.user.name %>
