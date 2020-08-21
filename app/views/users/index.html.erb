@@ -12,6 +12,7 @@
                     <th>Email</th>
                     <th>Title</th>
                     <th>Body</th>
+                    <th>Time of upload</th>
                 </tr>
             </thead>
 
@@ -26,6 +27,7 @@
                     <td><%= question.user.email %></td>
                     <td><%= question.title %></td>
                     <td><%= question.body %></td>
+                    <td><%= question.updated_at %></td>
                 </tr>
                     <% end %>
                 <% end %>

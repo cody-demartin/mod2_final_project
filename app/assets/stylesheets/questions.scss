@@ -131,10 +131,7 @@ table {
 .new-question-wrapper {
     width: 90%;
     height: 100%; 
-<<<<<<< HEAD
     // background-color: deepskyblue;
-=======
->>>>>>> b503166a52264baf598f82bb53a36eb5a88e33a1
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -197,13 +194,8 @@ table {
     background-color: #e9e9e9;
     height: 100%;
     grid-area: quesbody;
-<<<<<<< HEAD
-    border: 2px solid white;
-    margin-left: 65px;
-=======
     border: 2px solid black;
     margin-left: 10%;
->>>>>>> b503166a52264baf598f82bb53a36eb5a88e33a1
 }
 
 .answers-wrapper {

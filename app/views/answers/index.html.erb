@@ -15,6 +15,8 @@
         <table class="table1">
           <thead>
             <tr>
+              <th>Name</th>
+              <th>Email</th>
               <th>Title</th>
               <th>Body</th>
               <th>Time of upload</th>
@@ -25,6 +27,8 @@
           <tbody>
             <% @answers.each do |answer| %>
               <tr>
+                <td><%= answer.question.user.name %></td>
+                <td><%= answer.question.user.email %></td>
                 <td><%= answer.title %></td>
                 <td><%= answer.body %></td>
                 <td><%= answer.updated_at %></td>
