@@ -19,11 +19,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    if current_user.employee 
-      @answer = current_user.answers.build
-    else
       redirect_to forbidden_path
-    end 
   end
 
   # GET /answers/1/edit
