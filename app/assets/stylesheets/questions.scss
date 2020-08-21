@@ -312,3 +312,11 @@ tr:hover {background-color: #f5f5f5;}
 .bottom-keys {
     margin-top: 8px;
 }
+
+.entire {
+    margin-top: 100px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
