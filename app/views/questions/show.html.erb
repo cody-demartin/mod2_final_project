@@ -1,81 +1,102 @@
 
   <%= render 'top/topnav' %>
 
-  <p id="notice"><%= notice %></p>
-<div class="question-wrapper">
-  
-  <div class="question-title">
-     <p>
-        <%= @question.title %>
-      </p>
-  </div>
-
-  <div class="question-topic">
-    <p>
-      Topic:
-        <%= @question.category %>
-    </p>
-  </div>
-
-  <div class="question-content">
-    <p>
-      <strong>Body:</strong>
-      <%= @question.body %>
-    </p>
-  </div>
-
-  <div class="question-asker">
-    <p>
-      <strong>User:</strong>
-      <%= User.find(@question.user_id).email %>
-    </p>
-  </div>
-  
-</div>
-
-  <% if @question.answers != [] %>
-    <p>
-    <div id="answer-header">
-      Answers <br>
+<div class="start">
+  <div class="response">
+    <div id="table-top">
+      <div class="top-1">
+        <div id="title">
+          <h2>Title</h2>
+          <h4><%= @question.title %></h4>
+        </div>
+      </div>
+      <div class="top-2">
+      </div>
+      <div class="top-1">
+        <div id="email">
+          <h2>User E-mail</h2>
+          <h4><%= User.find(@question.user_id).email %></h4>
+        </div>
+      </div>
+      <div class="top-2">
+      </div>
+      <div class="top-1">
+        <div id="category">
+          <h2>Category</h2>
+            <h4><%= @question.category %></h4>
+        </div>
+      </div>
     </div>
-      <% @question.answers.each do |answer| %>
-      <div class="answers-wrapper">    
-        <div class="answer-title">
-          <%= answer.title.capitalize %><br>
-        </div>
-        <div class="answer-body">
-          <%= answer.body %><br>
-        </div>
-        <div class="answer-email">  
-          Employee Contact: <%= User.find(answer.user_id).email %><br>
-        </div>
-      </div>  
+    <div class="blank-box">
+    </div>
+
+
+    <div class="question-content">
+        <h3>Question:</h3>
+        <%= @question.body %>
+    </div>
+
+    <div id="answer-box">
+      <% if @question.answers != [] %>
+            <% @question.answers.each do |answer| %>
+            <div class="answers-wrapper">
+              <div class="top-top">
+              </div>
+              <div class="wrapper-top">
+                <div class="top-left">
+                  <div class="table-3">
+                    <h2>Title</h2>
+                    <h4><%= answer.title.capitalize %></h4>
+                  </div>
+                </div>
+                <div class="top-middle">
+                  <div class="table-4">
+                  </div>
+                </div>
+                <div class="top-right">
+                  <div class="table-3">
+                    <h2>Employee Contact</h2>  
+                    <h4><%= User.find(answer.user_id).email %></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-middle">
+              </div>
+              <div class="question-content">
+                <h3>Answer:</h3>
+                <%= answer.body %>
+              </div>
+
+            </div>  
+          <% end %>
+        </p>
       <% end %>
-    </p>
-  <% end %>
 
 
-  <div class="answer-form">
-  <% if current_user.employee %>
-      <%= form_for @answer do |f| %>
+      <div class="answer-form">
+      <% if current_user.employee %>
+          <%= form_for @answer do |f| %>
 
-        <%= f.label :title %> 
-        <%= f.text_field :title %> 
-          
-        <%= f.label :body %> 
-        <%= f.text_area :body %> 
+            <%= f.label :title %> 
+            <%= f.text_field :title %> 
+            <p></p>
+              
+            <%= f.rich_text_area :body %> 
 
-        <%= f.hidden_field :question_id, value: @question.id %> 
+            <%= f.hidden_field :question_id, value: @question.id %> 
 
-        <%= f.hidden_field :user_id, value: current_user.id  %>
+            <%= f.hidden_field :user_id, value: current_user.id  %>
 
-        <%= f.submit "Submit Answer" %>
+            <%= f.submit "Submit Answer" %>
 
+          <% end %>
       <% end %>
-  <% end %>
-  </div>
+      </div>
+    </div>
+    <div class= "bottom-keys">
+      <%= link_to 'Edit', edit_question_path(@question) %> |
+      <%= link_to 'Back', questions_path %>
+    </div>
 
-  <div class="back">
-    <%= link_to 'Edit', edit_question_path(@question) %> |
-    <%= link_to 'Back', questions_path %>
   </div>
+</div>

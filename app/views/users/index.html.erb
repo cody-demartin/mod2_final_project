@@ -4,7 +4,7 @@
     <div class='response'>
         
     <% if @common_emails %>
-        <h2>You have responded to total of <%= @common_emails.count %> people from <%= @users.map(&:company).uniq[0]%>.</h2>
+        <h2>You have responded total of <%= @users.map(&:company).count %> question(s) from <%= params[:search] %>.</h2>
         <table id="response-table">
             <thead>
                 <tr>
@@ -34,6 +34,9 @@
     <% else %>
         <h1>We could not find questions that <%= @users.map(&:company).uniq[0] %> asked. Please try with different company. </h1>
     <% end %>
+    <div class="back-button">
+        <%= link_to 'Back', answers_path %>
+    </div>
     </div>
 
 
