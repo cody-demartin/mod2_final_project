@@ -50,8 +50,6 @@ class User < ApplicationRecord
   def self.search(search)
     if search
       company = User.where(company: search)
-    else
-      puts "We could not find that company. Please try again."
     end
   end
 
