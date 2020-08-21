@@ -1,12 +1,43 @@
 <%= render 'top/topnav'%>
 
-
 <div class='start'>
-    <div id='users'>
+    <div class='response'>
         
-    <% @common_emails.each do |email| %>
-        <%= email %>
-    <% end %>
+    <% if @common_emails %>
+        <h2>You have responded total of <%= @users.map(&:company).count %> question(s) from <%= params[:search] %>.</h2>
+        <table id="response-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
 
+            <tbody>
+                <% @common_emails.each do |i| %>
+                    <% questions = i.questions.all.select{|u| u.category == current_user.expertise} %>
+                <% questions.each do |question| %>
+                <tr>
+                        <% if question.user.name %>
+                        <td><%= question.user.name %></td>
+                        <% end %>
+                    <td><%= question.user.email %></td>
+                    <td><%= question.title %></td>
+                    <td><%= question.body %></td>
+                </tr>
+                    <% end %>
+                <% end %>
+            </tbody>
+        </table>
+    <% else %>
+        <h1>We could not find questions that <%= @users.map(&:company).uniq[0] %> asked. Please try with different company. </h1>
+    <% end %>
+    <div class="back-button">
+        <%= link_to 'Back', answers_path %>
     </div>
+    </div>
+
+
 </div>

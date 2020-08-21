@@ -5,8 +5,8 @@
 
 .search-bar {
     width: 40%;
-    height: 150px;
-
+    height: 50px;   
+    margin-top: 20px;
 }
 
 .search-item {
@@ -46,10 +46,15 @@
     width: 100%;
 }
 
-#show-table {
+.show-table {
     margin-top: 10px;
-    width: 1002px;
-    height: auto;
-    min-width: 1002px;
-    min-height: 180px;
+    margin-bottom: 10px;
+    width: 100%;
+    min-width: 980px;
+    height: 250px;
+
+}
+
+.answer-actions {
+    text-align: center;
 }
