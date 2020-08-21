@@ -6,6 +6,7 @@ class AnswersController < ApplicationController
   def index
     if current_user.employee 
       @answers = Answer.all
+      byebug
     else
       redirect_to forbidden_path
     end 
