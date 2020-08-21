@@ -2,40 +2,46 @@
 
 <div class='start'>
     <div class='response'>
-        
-    <% if @common_emails %>
-        <h2>You have responded total of <%= @users.map(&:company).count %> question(s) from <%= params[:search] %>.</h2>
-        <table id="response-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Title</th>
-                    <th>Body</th>
-                    <th>Time of upload</th>
-                </tr>
-            </thead>
+        <% if @users.map(&:company).count > 0 %>
+            <h2>You have responded total of <%= @common_emails.count %> user(s) from <%= params[:search] %>.</h2>
+            <table id="response-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                        <th>Time of upload</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <% @common_emails.each do |i| %>
-                    <% questions = i.questions.all.select{|u| u.category == current_user.expertise} %>
-                <% questions.each do |question| %>
-                <tr>
-                        <% if question.user.name %>
-                        <td><%= question.user.name %></td>
+                <tbody>
+                    <% @common_emails.each do |i| %>
+                        <% questions = i.questions.all.select{|u| u.category.downcase == current_user.expertise.downcase} %>
+                        <% questions.each do |question| %>
+                        <% if question.answers != [] %>
+                        <tr>
+                                <% if question.user.name %>
+                                <td><%= question.user.name %></td>
+                                <% end %>
+                            <td><%= question.user.email %></td>
+                            <td><%= question.title %></td>
+                            <td><%= question.body %></td>
+                            <td><%= question.updated_at %></td>
+                        </tr>
+                            <% end %>
                         <% end %>
-                    <td><%= question.user.email %></td>
-                    <td><%= question.title %></td>
-                    <td><%= question.body %></td>
-                    <td><%= question.updated_at %></td>
-                </tr>
                     <% end %>
-                <% end %>
-            </tbody>
-        </table>
-    <% else %>
-        <h1>We could not find questions that <%= @users.map(&:company).uniq[0] %> asked. Please try with different company. </h1>
-    <% end %>
+                </tbody>
+            </table>
+        <% else %>
+            <div id="blank-box">
+                <div id="no-company">
+                    <h2> We could not find your response for <%= params[:search] %>. Please type in different company. </h2>
+                    <h2> *Company name is case sensitive* </h2>
+                </div>
+            </div>
+        <% end %>
     <div class="back-button">
         <%= link_to 'Back', answers_path %>
     </div>
