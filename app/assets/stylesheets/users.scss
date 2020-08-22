@@ -6,19 +6,6 @@
 #all {
     margin-top: 60px;
     height:700px;
-    display: grid;
-    grid-template-columns: 150px 1fr 1fr;
-    grid-template-rows: 50px 150px auto auto;
-    grid-template-areas: 
-        "mid-top mid-top mid-top"
-        "pic email prof"
-        "none"
-        "none"
-    
-    ;
-
-
-
     width: 800px;
     position: fixed;
     top: 50%;
@@ -29,16 +16,12 @@
 
 #middle {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
+    width: 99.5%;
+    height: 99.5%;
     border-style: solid;
 }
 
 #middle-top {
-    grid-area: mid-top;
     display: fixed;
     border-style: solid;
     text-align: center;
@@ -48,40 +31,41 @@
 
 #list {
     display: flex;
+    width: 100%;
     height: 90%;
 }
 
-#list-left {
-    width: 35%;
-    height: 100%;
-}
-
 #profile-pic {
-    grid-area: pic;
+    display: fixed;
     border-style: solid;
-    width: 100%;
+    width: 38%;
     height: 100%;
+    word-wrap: break-word;
 }
 
 #pic {
-    
-    grid-area: photo;
     place-self: center center;
     width: 100%;
     height: 40%;
 }
 
-#pic img {
-    
+#list-right {
+    text-align: center;
+    margin-top: 4%;
+    width: 62%;
+    height: 90%;
+}
+
+#pic img { 
     width: 100%;
     height: 100%;
 }
 
 
 #profile {
-    grid-area: prof;
     text-align: right;
     margin-top: 25px;
+    margin-left: 5px;
     font-size: 15px;
     width: 98%;
     height: 42%;
@@ -97,16 +81,9 @@
 
 #user-email {
     width: 100%;
-    height: 50px;
+    height: 100px;
 }
 
-#list-right {
-    margin-top: 4%;
-    width: 55%;
-    height: 90%;
-    float: right;
-    margin-left: 5%;
-}
 
 #name {
     width: 100%;
