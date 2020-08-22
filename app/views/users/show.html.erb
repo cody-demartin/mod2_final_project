@@ -29,7 +29,7 @@
             <h2><%= form.label :Company %></h2>
             <h2><%= form.text_field :company, size: "35" %></h2>
         </div>
-        <% if current_user.expertise %>
+        <% if current_user.employee == true %>
             <div id="box_field">
             <h2><%= form.label :Expertise %></h2>
             <h2><%= form.text_field :expertise, size: "35" %></h2>
