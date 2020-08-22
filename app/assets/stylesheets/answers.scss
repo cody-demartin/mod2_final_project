@@ -3,9 +3,11 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+
+
 .search-bar {
     width: 40%;
-    height: 50px;   
+    height: 150px;   
     margin-top: 20px;
 }
 
@@ -15,6 +17,10 @@
     background-color: white;
     border-radius: 16px;
     width: 100%;
+}
+
+input#search {
+    font-size: 25px;
 }
 
 .response {
