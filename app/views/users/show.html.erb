@@ -1,61 +1,48 @@
 <%= render 'top/topnav' %>
 
 <div id="all">
-    <div id="middle">
-        <div id="middle-top">
-            <h3>General Account Settings</h3>
-        </div>
-        <div id="list">
-            <div id="profile-pic">
-                <div id="pic">
-                    <% if current_user.employee == false %>
-                        <%= image_tag("semin.jpeg") %>
-                    <% else current_user.expertise == "finance" %>
-                        <%= image_tag("greg.jpeg") %>
-                    <% end %>
-                </div>
-                <div id="profile">
-                    <% if current_user.name.split('').count > 0 %>
-                        <h3>Name: <%= current_user.name %></h3>
-                    <% end %>
-                    <% if current_user.company.split('').count > 0 %>
-                        <h3>Company: <%= current_user.company %></h3>
-                    <% end %>
-                    <% if current_user.expertise.split('').count > 0 %>
-                        <h3>Expertise: <%= current_user.expertise %></h3>
-                    <% end %>
-                    <div id="user-email">
-                        <h3>Email: <%= current_user.email %></h3>
-                    </div>
-                </div>
-                <div id="greeting">
-                    <p>Thank you for being a memeber of Flatiron Consulting!</p>
-                </div>
-            </div>
-            <div id="list-right">
-            
-                <%= form_with(model: @user, local: true) do |form| %>
-                
-                <div id="name">
-                    <h2><%= form.label :Name %></h2>
-                    <h2><%= form.text_field :name%></h2>
-                </div>
-                <div id="company">
-                    <h2><%= form.label :Company %></h2>
-                    <h2><%= form.text_field :company %></h2>
-                </div>
-                <% if current_user.expertise.split('').count > 0 %>
-                    <div id="expertise">
-                    <h2><%= form.label :Expertise %></h2>
-                    <h2><%= form.text_field :expertise %></h2>
-                </div>
-                <% end %>
+    <div id="profile-top">
+        <h3>General Account Settings</h3>
+    </div>
+    <div id="profile">
+        <%= form_with(model: @user, local: true, class:"form_by") do |form| %>
+        
+        <div id="box_field">
+            <h2><%= form.label :Image %></h2>
+            <% if current_user.image.attached? %>
+                <%= image_tag current_user.image, style: "width: 180px; display: block" %>
+            <% end %>
 
-                <div id="save">
-                    <%= form.button "Save" %>
-                </div>
-                <% end %>
+            <%= form.file_field :image, id: "box_field" %>
+        </div>
+        <div id="box_field">
+            <h2><%= form.label :Name %></h2>
+            <h2><%= form.text_field :name, size: "35" %></h2>
+        </div>
+        <div id="box_field">
+            <h2><%= form.label :Email %></h2>
+            <h2><%= form.text_field :email, size: "35" %></h2>
+        </div>
+        <div id="box_field">
+            <h2><%= form.label :Company %></h2>
+            <h2><%= form.text_field :company, size: "35" %></h2>
+        </div>
+        <% if current_user.expertise.split('').count > 0 %>
+            <div id="box_field">
+            <h2><%= form.label :Expertise %></h2>
+            <h2><%= form.text_field :expertise, size: "35" %></h2>
             </div>
+        <% end %>
+
+
+        <div id="save">
+            <%= form.button "Save" %>
+        </div>
+        <div id="greeting">
+            <p>Thank you for being a memeber of Flatiron Consulting!</p>
+        </div>
+        <% end %>
+
     </div>
 </div>
 

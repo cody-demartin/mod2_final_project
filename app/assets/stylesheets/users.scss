@@ -4,24 +4,17 @@
 
 
 #all {
-    margin-top: 60px;
-    height:700px;
+    height:850px;
     width: 800px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: honeydew;
+
 }
 
-#middle {
-    position: fixed;
-    width: 99.5%;
-    height: 99.5%;
-    border-style: solid;
-}
-
-#middle-top {
+#profile-top {
     display: fixed;
     border-style: solid;
     text-align: center;
@@ -29,10 +22,11 @@
     width: 99.5%;
 }
 
-#list {
-    display: flex;
+#profile {
+    margin-top: 60px;
     width: 100%;
     height: 90%;
+    text-align: center;
 }
 
 #profile-pic {
@@ -43,76 +37,31 @@
     word-wrap: break-word;
 }
 
-#pic {
-    place-self: center center;
-    width: 100%;
-    height: 40%;
-}
-
-#list-right {
-    text-align: center;
-    margin-top: 4%;
-    width: 62%;
-    height: 90%;
-}
-
-#pic img { 
-    width: 100%;
-    height: 100%;
-}
-
-
-#profile {
-    text-align: right;
-    margin-top: 25px;
-    margin-left: 5px;
-    font-size: 15px;
-    width: 98%;
-    height: 42%;
-
-}
 
 #greeting {
+    position: absolute;
     text-align: center;
-    margin-bottom: 2%;
-    width: 100%;
-    height: 10%;
+    width: 800px;
+    height: 20px;
+    bottom: 20px;
 }
 
-#user-email {
+.form_by {
+    display: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 25px;
+}
+
+#box-field {
     width: 100%;
     height: 100px;
 }
 
-
-#name {
-    width: 100%;
-    height: 125px;
-}
-
-#company {
-    width: 100%;
-    height: 125px;
-}
-
-#expertise {
-    width: 100%;
-    height: 125px;
-}
-
-form {
-    position: relative;
-    height: 95%;
-}
-
 #save {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: right;
     border-style: solid
     border-radius 15px;
-    margin-right: 7%;
+    bottom: 0;
 }
 
 #users {
@@ -140,4 +89,10 @@ form {
 
 #no-company {
     margin-left: 45%;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
