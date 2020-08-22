@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :questions
   has_many :answers 
-
+  has_one_attached :image
 
   def self.all_emp_email
     self.all.map do |user|

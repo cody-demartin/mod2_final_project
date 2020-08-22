@@ -10,15 +10,17 @@
       </ul>
     </div>
   <% end %>
-<div class="new-question-wrapper">
-  <div class="title-field">
-    <%= form.label "Question Title:" %>
-    <%= form.text_field :title %>
-  </div>
+<div class="new-form">
+  <div class="title-cat">
+    <div class="title-field">
+      <%= form.label "Question Title:" %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div class="cat-field">
-    <%= form.label "Question Category:" %>
-    <%= form.select :category, [ 'Finance','Billing','Admission','Job' ], :prompt => 'Select One' %>
+    <div class="cat-field">
+      <%= form.label "Question Category:" %>
+      <%= form.select :category, [ 'Finance','Billing','Admission','Job' ], :prompt => 'Select One' %>
+    </div>
   </div>
 
 
