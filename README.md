@@ -35,7 +35,6 @@ What? You want to know what your company has asked about a particular category o
 
 ### consultant company search
 
-### pic of the code
 app/controllers/user_controller user#index looks like this:
 ```   
   def index
