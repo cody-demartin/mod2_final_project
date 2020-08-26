@@ -58,7 +58,7 @@ Hope you enjoyed our project!
 
 ### Cody DeMartin
 
-## Demo
+# Demo
 - https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s << Flatiron Consulting
 - https://www.youtube.com/watch?v=TVFmlVFrffw&t=5s << Shop N Cook (Please checkout my first project as well)
 - https://github.com/jakelozano94/ruby-project-guidelines-nyc01-seng-ft-071320  << code for Shop N Cook
