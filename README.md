@@ -9,6 +9,12 @@ This project was intended to make a Q&A page for a consulting company. We wanted
 - Client will receive email when the consultant answers the question.
 - The consultant should be able to sort out his/her responses by client's company.
 
+## Versions...
+- Ruby 2.6.1p33
+- Rails 6.0.3.2
+- Yarn 1.22.4
+- sqlite3 1.4.2
+
 ## Used...
 - Omniauth + Devise for user authentication.
 - ActionMailer for email system.
@@ -30,12 +36,11 @@ This project was intended to make a Q&A page for a consulting company. We wanted
 Let's start by signing up. You can sign up manually, or use GoogleOauth2 and use existing email. Once you are signed up, go to profile by hovering over the email address on the top right corner. You can upload profile picture from your computer. Fill in the rest of the information, because it helps our consultants to find their clients by company. 
 Let's go over to the question section to ask a new question. Ding-- you should've received an email from flatironconsultinggroup@gmail.com saying that consultants have received your question, and will be back with your response. Consultants also receive reminder emails to answer the question, so don't worry about not getting your question answered. 
 
-<img src='./images/consultant_email.png'>
+![](app/assets/images/consultant_email.png)
 
 What? You want to know what your company has asked about a particular category of a question? No worries! Our consultants can sort through by company's name to fetch their response to the company's questions. 
 
-
-<img src='./images/consultant_response.png'>
+![](app/assets/images/consultant_response.png)
 
 app/controllers/user_controller user#index looks like this:
 ```   
@@ -63,3 +68,4 @@ Hope you enjoyed our project!
 - https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s << Flatiron Consulting
 - https://www.youtube.com/watch?v=TVFmlVFrffw&t=5s << Shop N Cook (Please checkout my first project as well)
 - https://github.com/jakelozano94/ruby-project-guidelines-nyc01-seng-ft-071320  << code for Shop N Cook
+
