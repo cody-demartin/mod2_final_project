@@ -55,7 +55,7 @@ Hope you enjoyed our project!
 - github: https://github.com/Seminlee94
 - linkedIn: https://www.linkedin.com/in/se-min-lee-149188105/
 - Medium: https://medium.com/@mlsml94
-- portfolio: https://seminlee94.github.io/semin/   <--- coming soon!
+- portfolio: https://seminlee94.github.io/semin/
 
 ### Cody DeMartin
 
