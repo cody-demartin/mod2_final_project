@@ -67,7 +67,7 @@ Hope you enjoyed our project!
 # Demo✅
 - https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s
 
-## Please check out Se Min Lee's previous demos and projects.
+## Please check out Se Min Lee's other demos and projects.
 #### Demo
 - https://www.youtube.com/watch?v=TVFmlVFrffw&t=5s << Shop N Cook
 - https://www.youtube.com/watch?v=58Dlbg41p70 << WALL-E
