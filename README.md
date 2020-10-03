@@ -1,32 +1,32 @@
 # Q&A for businesses
 
-## About
+## About✅
 This project was intended to make a Q&A page for a consulting company. We wanted the client to ask a question privately, without being able to see other client's questions. 
 
-## Included Features
+## Included Features✅
 - Client can ask a private question.
 - Once the question is submitted, e-mail is sent out to the client and consultant in charge.
 - Client will receive email when the consultant answers the question.
 - The consultant should be able to sort out his/her responses by client's company.
 
-## Versions...
+## Versions...✅
 - Ruby 2.6.1p33
 - Rails 6.0.3.2
 - Yarn 1.22.4
 - sqlite3 1.4.2
 
-## Used...
+## Used...✅
 - Omniauth + Devise for user authentication.
 - ActionMailer for email system.
 - ActionText for text boxes.
 - Active Storage for image uploads.
   
-## Stretch goals
+## Stretch goals✅
 - Add chatting feature using Action Cable.
 - Search user by using @ mentions.
 - Brush up on the styling.
 
-## Getting started
+## Getting started✅
 - Clone the repository
 - Bundle install
 - ``` brew install yarn ``` to install yarn.
@@ -54,7 +54,7 @@ app/controllers/user_controller user#index looks like this:
 
 Hope you enjoyed our project! 
 
-## Developers
+## Developers✅
 ### Se Min Lee
 - email: seminlee2794@gmail.com
 - github: https://github.com/Seminlee94
@@ -64,8 +64,18 @@ Hope you enjoyed our project!
 
 ### Cody DeMartin
 
-# Demo
-- https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s << Flatiron Consulting
-- https://www.youtube.com/watch?v=TVFmlVFrffw&t=5s << Shop N Cook (Please checkout my first project as well)
-- https://github.com/jakelozano94/ruby-project-guidelines-nyc01-seng-ft-071320  << code for Shop N Cook
+# Demo✅
+- https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s
+
+## Please check out Se Min Lee's previous demos and projects.
+#### Demo
+- https://www.youtube.com/watch?v=TVFmlVFrffw&t=5s << Shop N Cook
+- https://www.youtube.com/watch?v=58Dlbg41p70 << WALL-E
+
+#### Github Codes
+- https://github.com/jakelozano94/ruby-project-guidelines-nyc01-seng-ft-071320 << Shop N Cook
+- https://github.com/abeciana1/wal-e-frontend << WALL-E(Front end)
+- https://github.com/abeciana1/wal-e-backend << WALL-E(Back end)
+- https://github.com/Seminlee94/mod4project-react << Cart-In(Front end)
+- https://github.com/Seminlee94/mod4project-backend << Cart-In(Back end)
 
