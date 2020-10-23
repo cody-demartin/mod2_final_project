@@ -67,15 +67,17 @@ Hope you enjoyed our project!
 # Demo✅
 - https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s
 
-## Please check out Se Min Lee's other demos and projects.
+## Please check out Se Min Lee's previous demos and projects.
 #### Demo
+- https://youtu.be/KqbWtAAxiPc << Cart-In
+- https://www.youtube.com/watch?v=sn4SqkDkPZQ&t=62s << Flatiron Consulting
 - https://www.youtube.com/watch?v=TVFmlVFrffw&t=5s << Shop N Cook
 - https://www.youtube.com/watch?v=58Dlbg41p70 << WALL-E
-
 #### Github Codes
-- https://github.com/jakelozano94/ruby-project-guidelines-nyc01-seng-ft-071320 << Shop N Cook
-- https://github.com/abeciana1/wal-e-frontend << WALL-E(Front end)
-- https://github.com/abeciana1/wal-e-backend << WALL-E(Back end)
 - https://github.com/Seminlee94/mod4project-react << Cart-In(Front end)
 - https://github.com/Seminlee94/mod4project-backend << Cart-In(Back end)
+- https://github.com/cdemarti/mod2_final_project << code for Flatiron Consulting
+- https://github.com/jakelozano94/ruby-project-guidelines-nyc01-seng-ft-071320 << code for Shop N Cook
+- https://github.com/abeciana1/wal-e-frontend << WALL-E(Front end)
+- https://github.com/abeciana1/wal-e-backend << WALL-E(Back end)
 
